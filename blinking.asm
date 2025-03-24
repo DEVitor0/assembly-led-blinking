@@ -9,3 +9,12 @@ section .data
     led_on    db  '[X]', 0xA
     led_off   db  '[ ]', 0xA
     clear     db  0x1B, '[2J', 0x1B, '[H', 0
+
+section .text
+    global _start
+
+_start:
+    mov rbp, rsp
+
+main_loop:
+    jmp main_loop
