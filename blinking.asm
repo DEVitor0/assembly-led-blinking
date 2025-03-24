@@ -26,3 +26,15 @@ main_loop:
 
   jmp main_loop
   jmp main_loop
+
+sleep:
+    mov rax, 35
+    mov rdi, timespec
+    xor rsi, rsi
+    syscall
+    ret
+
+section .data
+    timespec:
+        tv_sec  dq 1
+        tv_nsec dq 0
