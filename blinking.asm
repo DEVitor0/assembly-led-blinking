@@ -24,7 +24,24 @@ main_loop:
   mov rdx, 5
   syscall
 
-  jmp main_loop
+  call sleep
+
+  ; Display OFF state
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, led_off
+  mov rdx, 5
+  syscall
+
+  call sleep
+
+  ; Clear screen
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, clear
+    mov rdx, 7
+    syscall
+
   jmp main_loop
 
 sleep:
