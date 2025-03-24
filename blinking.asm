@@ -17,4 +17,12 @@ _start:
     mov rbp, rsp
 
 main_loop:
-    jmp main_loop
+  ; Display ON state
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, led_on
+  mov rdx, 5
+  syscall
+
+  jmp main_loop
+  jmp main_loop
